@@ -26,7 +26,7 @@ print "cube of matrix a: \n", a_3
 a_magic_3 = eig_vect.dot(np.linalg.matrix_power(np.diag(eig_val), 3)).dot(np.linalg.inv(eig_vect))
 print "cube of matrix using only eigvals/eigvects: \n", a_magic_3
 is_identity = a_3.dot(np.linalg.inv(a_magic_3))
-print "isn't it magic?: \n", is_identity
+print "\n", is_identity
 
 
 
