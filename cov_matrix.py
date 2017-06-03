@@ -6,10 +6,10 @@ def cov(X0):
     print X0
     X = X0 - X0.mean(axis=0) # matrix is centered
     U, s, V = np.linalg.svd(X, full_matrices = 0)
-    D = np.dot(np.dot(V.T,np.diag(s**2)),V) # Using SVD 
-    Dadjust = D / (X0.shape[0] - 1)
+    C = np.dot(np.dot(V.T,np.diag(s**2)),V) # Using SVD 
+    cov_mat = C/(X0.shape[0] - 1)
     print "Covariance Matrix:"
-    print (Dadjust)
+    print (cov_mat)
 
 a = np.matrix([[1,2,0],[-2,3,-4],[5,3,-1], [7,-2,3]])
 print cov(a)
